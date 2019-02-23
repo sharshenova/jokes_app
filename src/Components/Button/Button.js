@@ -1,10 +1,11 @@
 import React from 'react';
 
 function Button (props) {
-	return
+	return (
 		<div className="Button">
-			<button>GET JOKES</button>
+			<button onClick={props.getExtraJokes}>GET JOKES</button>
 		</div>
+	)
 }
 
 export default Button;

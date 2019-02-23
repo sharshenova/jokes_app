@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Jokes from "./Components/Jokes/Jokes";
+import Amount from "./Components/Amount/Amount";
+import Button from "./Components/Button/Button";
 
 
 class App extends Component {
@@ -10,6 +12,15 @@ class App extends Component {
 		this.state = {};
 		this.state.jokes = [];
 		this.state.amount = 5;
+	}
+
+	setUserAmount = (event) => {
+		this.setState({amount: event.target.value});
+		console.log(this.state.amount);
+	}
+
+	getExtraJokes = () => {
+		this.getRandomJokes(this.state.amount);
 	}
 
 	componentDidMount() {
@@ -50,10 +61,23 @@ class App extends Component {
 
 	};
 
+	getDesiredAmount () {
+
+	}
+
 	render() {
 		return (
-			<div className="App">
+			<div className="container">
+				<h2>Best jokes about Chuck Norris in the Internet</h2>
 				<Jokes items={this.state.jokes}/>
+				<p><b>Do you want more jokes? Specify the desired amount!</b></p>
+				<Amount 
+					setUserAmount={this.setUserAmount}
+					value={this.state.amount}
+				/>
+				<Button
+					getExtraJokes={this.getExtraJokes}
+				/>
 			</div>
 		);
 	}

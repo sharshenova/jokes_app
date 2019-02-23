@@ -1,10 +1,12 @@
 import React from 'react';
 
 function Amount (props) {
-	return
+	return (
 		<div className="Amount">
-			<input type="number" size="10">
+			<input type="number" placeholder="Desired amount" onChange={props.setUserAmount} value={props.value}></input>
 		</div>
+	)
 }
 
 export default Amount;
+
