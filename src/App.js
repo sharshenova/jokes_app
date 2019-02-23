@@ -68,10 +68,10 @@ class App extends Component {
 	render() {
 		return (
 			<div className="container">
-				<h2>Best jokes about Chuck Norris in the Internet</h2>
+				<h2 className="mt-4 mb-4">Best jokes about Chuck Norris in the Internet</h2>
 				<Jokes items={this.state.jokes}/>
-				<p><b>Do you want more jokes? Specify the desired amount!</b></p>
-				<Amount 
+				<p className="mt-4"><b>Do you want more jokes? Specify the desired amount!</b></p>
+				<Amount
 					setUserAmount={this.setUserAmount}
 					value={this.state.amount}
 				/>
